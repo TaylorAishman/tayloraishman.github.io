@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title }} | {{ site.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  </head>
+  <body>
+    <main class="container">
+      <pre class="banner">==================================================
+My Portfolio &amp; Blog
+Engineer | Problem Solver | Lifelong Learner
+==================================================</pre>
+
+      <nav class="site-nav">
+        {% assign resume_file = site.static_files | where: "name", "resume.pdf" %}
+        <a href="{{ "/" | relative_url }}">Home</a>
+        <a href="{{ "/projects/" | relative_url }}">Projects</a>
+        <a href="{{ "/diaries/" | relative_url }}">Dev Diaries</a>
+        <a href="{{ "/notes/" | relative_url }}">Tech Notes</a>
+        <a href="{{ "/thinking/" | relative_url }}">Thinking</a>
+        {% if resume_file.size > 0 %}
+          <a href="{{ "/resume.pdf" | relative_url }}">Resume</a>
+        {% else %}
+          <a href="{{ "/#resume" | relative_url }}">Resume</a>
+        {% endif %}
+      </nav>
+
+      <section class="content">
+        {{ content }}
+      </section>
+
+      <footer class="footer">
+        <pre class="banner">==================================================
+© {{ "now" | date: "%Y" }}
+==================================================</pre>
+      </footer>
+    </main>
+  </body>
+</html>

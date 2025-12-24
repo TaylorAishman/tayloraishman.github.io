@@ -1,0 +1,45 @@
+title: "My Portfolio & Blog"
+description: "Terminal-style portfolio and writing framework."
+url: "https://tayloraishman.github.io"
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+
+collections:
+  projects:
+    output: true
+  diaries:
+    output: true
+  notes:
+    output: true
+  readings:
+    output: true
+  essays:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "diaries"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "readings"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "essays"
+    values:
+      layout: "default"
